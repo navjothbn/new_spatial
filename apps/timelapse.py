@@ -14,35 +14,6 @@ from datetime import date
 from .rois import *
 
 
-st.set_page_config(layout="wide")
-
-
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-st.markdown(
-        f"""
-<style>
-    .reportview-container .main .block-container{{
-        padding-top: 3%;
-        padding-right: 2%;
-        padding-left: 6%;
-        padding-bottom: 0rem;
-        background-color: #ffffff;
-    }}
-   
-</style>
-""",
-        unsafe_allow_html=True,
-    )
-
-
-
-
 @st.cache
 def uploaded_file_to_gdf(data):
     import tempfile
@@ -1110,4 +1081,3 @@ def app():
                             st.error(
                                 "Something went wrong. You probably requested too much data. Try reducing the ROI or timespan."
                             )
-app()
